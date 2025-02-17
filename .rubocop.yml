@@ -8,3 +8,6 @@ require: rubocop-sorbet
 # # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
 # Layout/SpaceInsideArrayLiteralBrackets:
 #   Enabled: false
+
+Sorbet/FalseSigil:
+  Enabled: true
