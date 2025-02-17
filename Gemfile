@@ -35,4 +35,5 @@ group :development, :test do
   gem "tapioca", "~> 0.16.10"
   gem "sorbet-static-and-runtime", "~> 0.5.11834"
   gem "rubocop-sorbet"
+  gem "rubocop", "~> 1.71.0"
 end
