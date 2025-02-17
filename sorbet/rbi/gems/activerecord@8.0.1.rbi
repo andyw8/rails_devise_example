@@ -6001,7 +6001,7 @@ class ActiveRecord::Associations::Preloader::ThroughAssociation < ::ActiveRecord
   def through_scope; end
 end
 
-# source://activerecord//lib/active_record/associations/singular_association.rb#6
+# source://activerecord//lib/active_record/associations/singular_association.rb#5
 class ActiveRecord::Associations::SingularAssociation < ::ActiveRecord::Associations::Association
   # source://activerecord//lib/active_record/associations/singular_association.rb#29
   def build(attributes = T.unsafe(nil), &block); end
@@ -13364,25 +13364,8 @@ class ActiveRecord::ConnectionAdapters::ConnectionPool::Reaper
   end
 end
 
-# source://activerecord//lib/active_record/connection_adapters/abstract/connection_pool.rb#125
-class ActiveRecord::ConnectionAdapters::ConnectionPool::WeakThreadKeyMap
-  # FIXME: On 3.3 we could use ObjectSpace::WeakKeyMap
-  # but it currently cause GC crashes: https://github.com/byroot/rails/pull/3
-  #
-  # @return [WeakThreadKeyMap] a new instance of WeakThreadKeyMap
-  #
-  # source://activerecord//lib/active_record/connection_adapters/abstract/connection_pool.rb#128
-  def initialize; end
-
-  # source://activerecord//lib/active_record/connection_adapters/abstract/connection_pool.rb#136
-  def [](key); end
-
-  # source://activerecord//lib/active_record/connection_adapters/abstract/connection_pool.rb#140
-  def []=(key, value); end
-
-  # source://activerecord//lib/active_record/connection_adapters/abstract/connection_pool.rb#132
-  def clear; end
-end
+# source://activerecord//lib/active_record/connection_adapters/abstract/connection_pool.rb#123
+ActiveRecord::ConnectionAdapters::ConnectionPool::WeakThreadKeyMap = ObjectSpace::WeakKeyMap
 
 # source://activerecord//lib/active_record/connection_adapters/abstract/schema_definitions.rb#119
 class ActiveRecord::ConnectionAdapters::CreateIndexDefinition < ::Struct

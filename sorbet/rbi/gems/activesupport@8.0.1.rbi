@@ -5660,7 +5660,7 @@ end
 # source://activesupport//lib/active_support/core_ext/enumerable.rb#25
 ActiveSupport::EnumerableCoreExt::SoleItemExpectedError = Enumerable::SoleItemExpectedError
 
-# source://activesupport//lib/active_support/environment_inquirer.rb#9
+# source://activesupport//lib/active_support/environment_inquirer.rb#7
 class ActiveSupport::EnvironmentInquirer < ::ActiveSupport::StringInquirer
   # @raise [ArgumentError]
   # @return [EnvironmentInquirer] a new instance of EnvironmentInquirer
@@ -17835,12 +17835,6 @@ IO::READABLE = T.let(T.unsafe(nil), Integer)
 class IO::TimeoutError < ::IOError; end
 IO::WRITABLE = T.let(T.unsafe(nil), Integer)
 
-# source://activesupport//lib/active_support/core_ext/object/json.rb#243
-class IPAddr
-  # source://activesupport//lib/active_support/core_ext/object/json.rb#244
-  def as_json(options = T.unsafe(nil)); end
-end
-
 # source://activesupport//lib/active_support/core_ext/integer/time.rb#6
 class Integer < ::Numeric
   include ::ActiveSupport::NumericWithFormat
@@ -17873,6 +17867,8 @@ class Integer < ::Numeric
   # source://activesupport//lib/active_support/core_ext/integer/time.rb#18
   def years; end
 end
+
+Integer::GMP_VERSION = T.let(T.unsafe(nil), String)
 
 # source://activesupport//lib/active_support/core_ext/kernel/reporting.rb#3
 module Kernel
@@ -17951,19 +17947,6 @@ module Kernel
     # source://activesupport//lib/active_support/core_ext/kernel/reporting.rb#26
     def with_warnings(flag); end
   end
-end
-
-# source://activesupport//lib/active_support/core_ext/object/duplicable.rb#39
-class Method
-  # Methods are not duplicable:
-  #
-  #   method(:puts).duplicable? # => false
-  #   method(:puts).dup         # => TypeError: allocator undefined for Method
-  #
-  # @return [Boolean]
-  #
-  # source://activesupport//lib/active_support/core_ext/object/duplicable.rb#44
-  def duplicable?; end
 end
 
 # == Attribute Accessors per Thread
@@ -21048,17 +21031,4 @@ end
 class URI::Generic
   # source://activesupport//lib/active_support/core_ext/object/json.rb#231
   def as_json(options = T.unsafe(nil)); end
-end
-
-# source://activesupport//lib/active_support/core_ext/object/duplicable.rb#49
-class UnboundMethod
-  # Unbound methods are not duplicable:
-  #
-  #   method(:puts).unbind.duplicable? # => false
-  #   method(:puts).unbind.dup         # => TypeError: allocator undefined for UnboundMethod
-  #
-  # @return [Boolean]
-  #
-  # source://activesupport//lib/active_support/core_ext/object/duplicable.rb#54
-  def duplicable?; end
 end

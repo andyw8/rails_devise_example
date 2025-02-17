@@ -14332,10 +14332,7 @@ end
 ActionDispatch::Journey::Scanner::STATIC_TOKENS = T.let(T.unsafe(nil), Array)
 
 # source://actionpack//lib/action_dispatch/journey/scanner.rb#20
-class ActionDispatch::Journey::Scanner::Scanner < ::StringScanner
-  # source://actionpack//lib/action_dispatch/journey/scanner.rb#22
-  def peek_byte; end
-end
+class ActionDispatch::Journey::Scanner::Scanner < ::StringScanner; end
 
 # source://actionpack//lib/action_dispatch/journey/visitors.rb#55
 module ActionDispatch::Journey::Visitors; end
@@ -20246,6 +20243,7 @@ end
 
 # source://actionpack//lib/action_dispatch/middleware/server_timing.rb#9
 class ActionDispatch::ServerTiming::Subscriber
+  include ::Singleton::SingletonInstanceMethods
   include ::Singleton
   extend ::Singleton::SingletonClassMethods
 
@@ -20823,6 +20821,7 @@ Mime::ALL = T.let(T.unsafe(nil), Mime::AllType)
 
 # source://actionpack//lib/action_dispatch/http/mime_type.rb#349
 class Mime::AllType < ::Mime::Type
+  include ::Singleton::SingletonInstanceMethods
   include ::Singleton
   extend ::Singleton::SingletonClassMethods
 
@@ -20888,6 +20887,7 @@ end
 
 # source://actionpack//lib/action_dispatch/http/mime_type.rb#365
 class Mime::NullType
+  include ::Singleton::SingletonInstanceMethods
   include ::Singleton
   extend ::Singleton::SingletonClassMethods
 
