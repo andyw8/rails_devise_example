@@ -40,5 +40,10 @@ module RailsDeviseExample
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Running `tapioca:dsl` was failing due to a Zeitwerk check, so this is a around
+    # https://github.com/heartcombo/devise/pull/5731 should solve this once released.
+    devise_path = Gem::Specification.find_by_name("devise").gem_dir
+    Rails.autoloaders.main.ignore("#{devise_path}/app/mailers/devise/mailer.rb")
   end
 end
