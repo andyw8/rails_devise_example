@@ -8,6 +8,8 @@ gem:
 dsl:
   # Add your `dsl` command parameters here:
   #
-  # exclude:
+  exclude:
+  - ActiveRecordColumnsPersisted # from boba
+  - ActiveRecordAssociationsPersisted # from boba
   # - SomeGeneratorName
   # workers: 5
