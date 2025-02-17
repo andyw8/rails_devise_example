@@ -31,6 +31,7 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "tapioca", "~> 0.16.10"
+  gem "sorbet-static-and-runtime", "~> 0.5.11834"
 end
-
-
