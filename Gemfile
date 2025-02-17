@@ -37,3 +37,5 @@ group :development, :test do
   gem "rubocop-sorbet"
   gem "rubocop", "~> 1.71.0"
 end
+
+gem "devise", "~> 4.9"
