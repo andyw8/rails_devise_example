@@ -259,6 +259,8 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
+    rubocop-sorbet (0.8.7)
+      rubocop (>= 1)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
     solid_cache (1.0.7)
@@ -352,6 +354,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.1)
   rubocop-rails-omakase
+  rubocop-sorbet
   solid_cache
   solid_queue
   sorbet-static-and-runtime (~> 0.5.11834)
